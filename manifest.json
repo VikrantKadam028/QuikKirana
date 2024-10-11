@@ -1,7 +1,7 @@
 {
     "name": "QuikKirana",
     "short_name": "QuikKirana",
-    "start_url": "/",
+    "start_url": "/QuikKirana/index.html",
     "icons": [
         {
           "src": "logo.png",
