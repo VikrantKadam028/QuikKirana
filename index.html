@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="manifest" href="manifest.json" />
+    <title>QuikKirana</title>
+    <style>
+         body {
+      font-family: Arial, sans-serif;
+      background-color: #f8d7da; /* Light red background */
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 350px;
+      text-align: center;
+    }
+
+    .login-container h2 {
+      color: #721c24; /* Dark red */
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      position: relative;
+      margin-bottom: 25px;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #721c24; /* Dark red border */
+      border-radius: 5px;
+      outline: none;
+      background-color: #f8d7da; /* Light red */
+      color: #721c24;
+      transition: border-color 0.3s ease, background-color 0.3s ease;
+    }
+
+    .form-group input:focus {
+      background-color: #fff0f0; /* Lighter red on focus */
+      border-color: #dc3545;
+    }
+
+    .form-group label {
+      position: absolute;
+      top: 10px;
+      left: 15px;
+      font-size: 16px;
+      color: #721c24;
+      pointer-events: none;
+      transition: all 0.3s ease;
+    }
+    .form-group input:focus + label,
+    .form-group input:not(:placeholder-shown) + label {
+      top: -15px;
+      left: 10px;
+      font-size: 12px;
+      color: #dc3545;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      background-color: #dc3545;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: #b52b3a; /* Darker red */
+    }
+    </style>
+  </head>
+  <body>
+    <div class="login-container">
+      <h2>Login Form</h2>
+      <form>
+        <div class="form-group">
+          <input type="text" id="name" name="name" required placeholder=" " />
+          <label for="name">Name</label>
+        </div>
+        <div class="form-group">
+          <input type="text" id="shopname" name="shopname" required placeholder=" " />
+          <label for="shopname">Shop Name</label>
+        </div>
+        <div class="form-group">
+          <input type="tel" id="mobile" name="mobile" required placeholder=" " pattern="[0-9]{10}" />
+          <label for="mobile">Mobile No.</label>
+        </div>
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+    </div>
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("/service-worker.js")
+            .then((registration) => {
+              console.log(
+                "Service Worker registered with scope:",
+                registration.scope
+              );
+            })
+            .catch((error) => {
+              console.log("Service Worker registration failed:", error);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>
