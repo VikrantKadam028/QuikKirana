@@ -9,31 +9,28 @@
   </head>
   <body>
     <div class="main">
-      <div class="login-container">
-        <!-- Top Logo and Tagline Section -->
-        <div class="logo-tagline">
-          <img src="img2.png" alt="Logo" class="logo" />
-          <p class="tagline">Shop Smart, Shop Fast—With<br />QuikKirana!</p>
+      <div class="page1">
+        <div class="page1section1">
+          <img src="whitelogo.png" id="whitelogo">
+          <img src="frontpageimg.webp" id="frontpageimg">
         </div>
-
-        <!-- Input and Submit Section -->
-        <div class="input-section">
-          <div class="input-group">
-            <input type="number" id="phone-number" placeholder="+91" />
-            <p>By logging in, you are agreeing to our policies</p>
+        <div class="page1section2">
+          <div class="page1section2inner">
+            <label>Phone Number</label>
+          <input type="number" name="number" id="number">
+          <p>By logging in you are agreeing to our policies</p>
+          <button>OK</button>
           </div>
-          <button type="submit" class="btn-submit">
-            OK <span class="arrow">→</span>
-          </button>
-        </div>
-
-        <!-- Bottom Front Page Image -->
-        <div class="frontpageimg">
-          <img src="frontpageimg.webp" alt="Front Page Image" />
         </div>
       </div>
-    </div>
 
+    </div>
+  
+
+
+
+
+    <!-- Service Worker Registration -->
     <script>
       if ("serviceWorker" in navigator) {
         window.addEventListener("load", () => {
