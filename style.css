@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: poppins;
+  font-family: 'Poppins', sans-serif; /* Ensure the font is applied correctly */
 }
 
 body {
@@ -15,7 +15,6 @@ body {
 .main {
   width: 100vw;
   height: 100vh;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,18 +25,17 @@ body {
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column; /* Stack items vertically */
+  position: relative; /* Allows absolute positioning within */
 }
 
 .page1section1 {
-  width: auto;
-  height: auto;
   display: flex;
-  margin-top: 25%;
+  margin-top: 25px;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  position: absolute;
+  z-index: 1; /* Ensures front image stays below page1section2 */
 }
 
 #whitelogo {
@@ -47,25 +45,26 @@ body {
 }
 
 #frontpageimg {
-  width: auto;
-  height: 400px;
+  width: 100%;
+  height: auto;
+  z-index: 1; /* Keeps the image below the white background */
 }
 
 .page1section2 {
   width: 100%;
-  height: 700px;
+  height: 40vh; /* Cover 40% of the viewport height */
   background-color: white;
-  position: relative;
-  top: 480px;
-  bottom: 0;
-  border-radius: 30px;
+  position: absolute; /* To overlap it over the front image */
+  bottom: 0; /* Stick to the bottom of the viewport */
+  left: 0;
+  border-radius: 30px 30px 0 0; /* Rounded top corners */
   padding: 20px;
   display: flex;
   justify-content: center;
-
+  z-index: 2; /* Ensure it is above the front image */
 }
 
-.page1section2inner{
+.page1section2inner {
   width: 95%;
   height:50%;
   padding: 20px;
@@ -73,14 +72,12 @@ body {
   flex-direction: column;
 }
 
-.page1section2inner label{
+.page1section2inner label {
   font-size: 16px;
   color: grey;
- 
-
 }
 
-.page1section2inner input{
+.page1section2inner input {
   height: 50px;
   width: 100%;
   background-color: #D9D9D9;
@@ -91,16 +88,16 @@ body {
   margin-bottom: 10px;
   padding: 10px;
   color: black;
-  font-size:18px;
+  font-size: 18px;
 }
 
-.page1section2inner p{
+.page1section2inner p {
   color: blue;
   font-size: 14px;
   text-align: center;
 }
 
-.page1section2inner button{
+.page1section2inner button {
   padding: 15px;
   font-size: 18px;
   font-weight: 800;
@@ -109,6 +106,21 @@ body {
   border: none;
   outline: none;
   border-radius: 8px;
-  margin-top:70px ;
+  margin-top: 20px;
+}
 
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .page1section1 {
+    margin-top: 100px; /* Reduced margin for smaller screens */
+  }
+
+  .page1section2 {
+    top: auto; /* Default position remains bottom */
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
+
+  .page1section2inner button {
+    margin-top: 60px; /* Reduced button margin for smaller screens */
+  }
 }
