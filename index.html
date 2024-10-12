@@ -12,6 +12,7 @@
       <div class="page1">
         <div class="page1section1">
           <img src="whitelogo.png" id="whitelogo" />
+          <p class="slogan">Smart Inventory, Fast Billing</p>
           <img src="frontpageimg.webp" id="frontpageimg" />
         </div>
         <div class="page1section2">
@@ -19,7 +20,14 @@
             <label>Phone Number</label>
             <input type="number" name="number" id="number" />
             <p>By logging in you are agreeing to our policies</p>
+            <!-- Process Indicator with 3 dots -->
+            <div class="progress-indicator">
+              <span class="dot active"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
             <button>OK</button>
+            <label id="team">Made with ❤️ by TeamInnov4tors</label>
           </div>
         </div>
       </div>
@@ -30,7 +38,7 @@
       if ("serviceWorker" in navigator) {
         window.addEventListener("load", () => {
           navigator.serviceWorker
-            .register("QuikKirana/service-worker.js")
+            .register("/service-worker.js")
             .then((registration) => {
               console.log(
                 "Service Worker registered with scope:",
@@ -43,5 +51,6 @@
         });
       }
     </script>
+    <script src="script.js"></script>
   </body>
 </html>
